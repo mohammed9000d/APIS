@@ -2,13 +2,15 @@
 
 namespace App;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
+// use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Laravel\Passport\HasApiTokens;
 
 class User extends Authenticatable
 {
-    use Notifiable;
+
+    use HasApiTokens, Notifiable;
 
     /**
      * The attributes that are mass assignable.
@@ -36,4 +38,23 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public static function roles(){
+        $roles =[
+            'name' => 'required|string|min:3|max:10',
+            'email' => 'required|email|unique:users',
+            'password' => 'required|min:3',
+        ];
+
+        return $roles ;
+    }
+
+    public static function roleslogin(){
+        $roles =[
+            'email' => 'required|email|exists:users',
+            'password' => 'required|min:3',
+        ];
+
+        return $roles ;
+    }
 }

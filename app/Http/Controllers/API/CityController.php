@@ -67,9 +67,24 @@ class CityController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request, $id)
     {
         //
+        $request->request->add(['id' => $id]);
+        $validator = Validator::make($request->all(),['id' => 'required|exists:cities']);
+        if(!$validator->fails()){
+        $city = City::find($id);
+        return response()->json([
+            'status' => true,
+            'message' => 'success',
+            'data' => $city
+        ]);
+        }else{
+            return response()->json([
+                'status' => false,
+                'message' => $validator->getMessageBag()->first(),
+            ]);
+        }
     }
 
     /**

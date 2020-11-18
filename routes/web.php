@@ -86,13 +86,13 @@ Route::prefix('cms/admin')->middleware('auth:admin')->namespace('App\Http\Contro
     Route::get('/logout','Auth\AdminAuthController@logout')->name('admin.logout');
 });
 
-Route::prefix('cms/admin')->namespace('App\Http\Controllers')->group(function () {
+Route::prefix('cms/admin')->group(function () {
     Route::get('/login', 'Auth\AdminAuthController@showLoginView')->name('admin.login_view');
     Route::post('/login','Auth\AdminAuthController@login')->name('admin.login');
 });
 
 
-Route::prefix('cms/admin')->middleware('auth:admin')->namespace('App\Http\Controllers')->group(function () {
+Route::prefix('cms/admin')->middleware('auth:admin')->group(function () {
     Route::resource('admins','AdminController');
     Route::resource('cities','CityController');
     Route::resource('states','StateController');
@@ -103,7 +103,7 @@ Route::prefix('cms/admin')->middleware('auth:admin')->namespace('App\Http\Contro
     Route::resource('invoices','InvoiceController');
 
 });
-Route::prefix('cms/admin')->middleware('auth:admin')->namespace('App\Http\Controllers')->group(function () {
+Route::prefix('cms/admin')->middleware('auth:admin')->group(function () {
     Route::get('cities/{id}/states','CityController@showStates')->name('cities.states');
 });
 

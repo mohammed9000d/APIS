@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\City;
 use App\State;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class CityController extends Controller
 {
@@ -38,9 +39,9 @@ class CityController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
+        $validator = Validator::make($request->all(), [
             'name' => 'required|string|min:3|max:15|unique:cities,name',
-            'status'=> 'in:on'
+            'status'=> 'required'
         ],[
             'name.required'=>'please, enter city name',
             'name.min'=>'Name must be at least 3 characters lenght',
@@ -50,7 +51,9 @@ class CityController extends Controller
         $city->name = $request->get('name');
         $city->status = $request->has('status') ? 'Active':'InActive';
         $issaved = $city->save();
-        if($issaved){
+        // $city = City::create($validator->validated());
+
+        if($city){
             session()->flash('alert-type','alert-success');
             session()->flash('messege','City add successfully');
             return redirect()->back();
@@ -93,25 +96,28 @@ class CityController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+         // $validator = Validator::make($request->all(),
         $request->request->add(['id'=>$id]);
-        $request->validate([
+         $request->validate([
             'id'=> 'required|integer|exists:cities|unique:cities,name,'.$id,
             'name'=> 'required|string|min:3|max:15',
             'status'=> 'in:on'
-
         ]);
+        // $city = City::find($id)->updated($validator->validated());
         $city = City::find($id);
         $city->name = $request->get('name');
         $city->status = $request->has('status') ? 'Active' : 'InActive';
         $isupdated = $city->save();
         if($isupdated){
-            return redirect()->route('cities.index');
-        }else{
+            session()->flash('alert-type','alert-success');
+            session()->flash('messege','City add successfully');
             return redirect()->back();
-        }
-
+        }else
+            session()->flash('alert-type','alert-danger');
+            session()->flash('messege','Failed to create city');
+            return redirect()->back();
     }
+
 
     /**
      * Remove the specified resource from storage.

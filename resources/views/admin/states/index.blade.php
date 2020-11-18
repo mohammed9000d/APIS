@@ -28,7 +28,7 @@
                                 <th>Name</th>
                                 <th>status</th>
                                 <th>City Name</th>
-                                <th>Created At</th>+4
+                                <th>Created At</th>
                                 <th>Setting</th>
 
                             </tr>

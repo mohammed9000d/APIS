@@ -67,8 +67,6 @@ class Handler extends ExceptionHandler
         if($guard=='admin'){
             $login = 'admin.login_view';
             return redirect()->guest(route($login));
-
-
         }
     }
 }
