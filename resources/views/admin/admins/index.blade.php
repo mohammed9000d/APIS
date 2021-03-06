@@ -11,7 +11,7 @@
 
 @section('action')
     <div class="col-sm-5 col">
-    <a href="{{route('admins.create')}}"  class="btn btn-primary float-right mt-2">Add</a>
+    <a href="{{route('admins.create')}}"  class="float-right mt-2 btn btn-primary">Add</a>
     </div>
 @endsection
 
@@ -21,7 +21,7 @@
             <div class="card">
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table class="table table-hover table-center mb-0">
+                        <table class="table mb-0 table-hover table-center">
                             <thead>
                             <tr>
                                 <th>Image</th>

@@ -135,7 +135,7 @@
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table class="table table-hover table-center mb-0">
+                        <table class="table mb-0 table-hover table-center">
                             <thead>
                             <tr>
                                 <th>Doctor Name</th>
@@ -148,7 +148,7 @@
                             <tr>
                                 <td>
                                     <h2 class="table-avatar">
-                                        <a href="profile.html" class="avatar avatar-sm mr-2"><img
+                                        <a href="profile.html" class="mr-2 avatar avatar-sm"><img
                                                 class="avatar-img rounded-circle"
                                                 src="{{asset('doccure/admin/assets/img/doctors/doctor-thumb-01.jpg')}}"
                                                 alt="User Image"></a>
@@ -168,7 +168,7 @@
                             <tr>
                                 <td>
                                     <h2 class="table-avatar">
-                                        <a href="profile.html" class="avatar avatar-sm mr-2"><img
+                                        <a href="profile.html" class="mr-2 avatar avatar-sm"><img
                                                 class="avatar-img rounded-circle"
                                                 src="{{asset('doccure/admin/assets/img/doctors/doctor-thumb-02.jpg')}}"
                                                 alt="User Image"></a>
@@ -188,7 +188,7 @@
                             <tr>
                                 <td>
                                     <h2 class="table-avatar">
-                                        <a href="profile.html" class="avatar avatar-sm mr-2"><img
+                                        <a href="profile.html" class="mr-2 avatar avatar-sm"><img
                                                 class="avatar-img rounded-circle"
                                                 src="{{asset('doccure/admin/assets/img/doctors/doctor-thumb-03.jpg')}}"
                                                 alt="User Image"></a>
@@ -208,7 +208,7 @@
                             <tr>
                                 <td>
                                     <h2 class="table-avatar">
-                                        <a href="profile.html" class="avatar avatar-sm mr-2"><img
+                                        <a href="profile.html" class="mr-2 avatar avatar-sm"><img
                                                 class="avatar-img rounded-circle"
                                                 src="{{asset('doccure/admin/assets/img/doctors/doctor-thumb-04.jpg')}}"
                                                 alt="User Image"></a>
@@ -228,7 +228,7 @@
                             <tr>
                                 <td>
                                     <h2 class="table-avatar">
-                                        <a href="profile.html" class="avatar avatar-sm mr-2"><img
+                                        <a href="profile.html" class="mr-2 avatar avatar-sm"><img
                                                 class="avatar-img rounded-circle"
                                                 src="{{asset('doccure/admin/assets/img/doctors/doctor-thumb-05.jpg')}}"
                                                 alt="User Image"></a>
@@ -256,13 +256,13 @@
         <div class="col-md-6 d-flex">
 
             <!-- Feed Activity -->
-            <div class="card  card-table flex-fill">
+            <div class="card card-table flex-fill">
                 <div class="card-header">
                     <h4 class="card-title">Patients List</h4>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table class="table table-hover table-center mb-0">
+                        <table class="table mb-0 table-hover table-center">
                             <thead>
                             <tr>
                                 <th>Patient Name</th>
@@ -275,7 +275,7 @@
                             <tr>
                                 <td>
                                     <h2 class="table-avatar">
-                                        <a href="profile.html" class="avatar avatar-sm mr-2"><img
+                                        <a href="profile.html" class="mr-2 avatar avatar-sm"><img
                                                 class="avatar-img rounded-circle"
                                                 src="{{asset('doccure/admin/assets/img/patients/patient1.jpg')}}"
                                                 alt="User Image"></a>
@@ -289,7 +289,7 @@
                             <tr>
                                 <td>
                                     <h2 class="table-avatar">
-                                        <a href="profile.html" class="avatar avatar-sm mr-2"><img
+                                        <a href="profile.html" class="mr-2 avatar avatar-sm"><img
                                                 class="avatar-img rounded-circle"
                                                 src="{{asset('doccure/admin/assets/img/patients/patient2.jpg')}}"
                                                 alt="User Image"></a>
@@ -303,7 +303,7 @@
                             <tr>
                                 <td>
                                     <h2 class="table-avatar">
-                                        <a href="profile.html" class="avatar avatar-sm mr-2"><img
+                                        <a href="profile.html" class="mr-2 avatar avatar-sm"><img
                                                 class="avatar-img rounded-circle"
                                                 src="{{asset('doccure/admin/assets/img/patients/patient3.jpg')}}"
                                                 alt="User Image"></a>
@@ -317,7 +317,7 @@
                             <tr>
                                 <td>
                                     <h2 class="table-avatar">
-                                        <a href="profile.html" class="avatar avatar-sm mr-2"><img
+                                        <a href="profile.html" class="mr-2 avatar avatar-sm"><img
                                                 class="avatar-img rounded-circle"
                                                 src="{{asset('doccure/admin/assets/img/patients/patient4.jpg')}}"
                                                 alt="User Image"></a>
@@ -331,7 +331,7 @@
                             <tr>
                                 <td>
                                     <h2 class="table-avatar">
-                                        <a href="profile.html" class="avatar avatar-sm mr-2"><img
+                                        <a href="profile.html" class="mr-2 avatar avatar-sm"><img
                                                 class="avatar-img rounded-circle"
                                                 src="{{asset('doccure/admin/assets/img/patients/patient5.jpg')}}"
                                                 alt="User Image"></a>
@@ -361,7 +361,7 @@
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table class="table table-hover table-center mb-0">
+                        <table class="table mb-0 table-hover table-center">
                             <thead>
                             <tr>
                                 <th>Doctor Name</th>
@@ -376,7 +376,7 @@
                             <tr>
                                 <td>
                                     <h2 class="table-avatar">
-                                        <a href="profile.html" class="avatar avatar-sm mr-2"><img
+                                        <a href="profile.html" class="mr-2 avatar avatar-sm"><img
                                                 class="avatar-img rounded-circle"
                                                 src="{{asset('doccure/admin/assets/img/doctors/doctor-thumb-01.jpg')}}"
                                                 alt="User Image"></a>
@@ -386,7 +386,7 @@
                                 <td>Dental</td>
                                 <td>
                                     <h2 class="table-avatar">
-                                        <a href="profile.html" class="avatar avatar-sm mr-2"><img
+                                        <a href="profile.html" class="mr-2 avatar avatar-sm"><img
                                                 class="avatar-img rounded-circle"
                                                 src="{{asset('doccure/admin/assets/img/patients/patient1.jpg')}}"
                                                 alt="User Image"></a>
@@ -408,7 +408,7 @@
                             <tr>
                                 <td>
                                     <h2 class="table-avatar">
-                                        <a href="profile.html" class="avatar avatar-sm mr-2"><img
+                                        <a href="profile.html" class="mr-2 avatar avatar-sm"><img
                                                 class="avatar-img rounded-circle"
                                                 src="{{asset('doccure/admin/assets/img/doctors/doctor-thumb-02.jpg')}}"
                                                 alt="User Image"></a>
@@ -418,7 +418,7 @@
                                 <td>Dental</td>
                                 <td>
                                     <h2 class="table-avatar">
-                                        <a href="profile.html" class="avatar avatar-sm mr-2"><img
+                                        <a href="profile.html" class="mr-2 avatar avatar-sm"><img
                                                 class="avatar-img rounded-circle"
                                                 src="{{asset('doccure/admin/assets/img/patients/patient2.jpg')}}"
                                                 alt="User Image"></a>
@@ -441,7 +441,7 @@
                             <tr>
                                 <td>
                                     <h2 class="table-avatar">
-                                        <a href="profile.html" class="avatar avatar-sm mr-2"><img
+                                        <a href="profile.html" class="mr-2 avatar avatar-sm"><img
                                                 class="avatar-img rounded-circle"
                                                 src="{{asset('doccure/admin/assets/img/doctors/doctor-thumb-03.jpg')}}"
                                                 alt="User Image"></a>
@@ -451,7 +451,7 @@
                                 <td>Cardiology</td>
                                 <td>
                                     <h2 class="table-avatar">
-                                        <a href="profile.html" class="avatar avatar-sm mr-2"><img
+                                        <a href="profile.html" class="mr-2 avatar avatar-sm"><img
                                                 class="avatar-img rounded-circle"
                                                 src="{{asset('doccure/admin/assets/img/patients/patient3.jpg')}}"
                                                 alt="User Image"></a>
@@ -473,7 +473,7 @@
                             <tr>
                                 <td>
                                     <h2 class="table-avatar">
-                                        <a href="profile.html" class="avatar avatar-sm mr-2"><img
+                                        <a href="profile.html" class="mr-2 avatar avatar-sm"><img
                                                 class="avatar-img rounded-circle"
                                                 src="{{asset('doccure/admin/assets/img/doctors/doctor-thumb-04.jpg')}}"
                                                 alt="User Image"></a>
@@ -483,7 +483,7 @@
                                 <td>Urology</td>
                                 <td>
                                     <h2 class="table-avatar">
-                                        <a href="profile.html" class="avatar avatar-sm mr-2"><img
+                                        <a href="profile.html" class="mr-2 avatar avatar-sm"><img
                                                 class="avatar-img rounded-circle"
                                                 src="{{asset('doccure/admin/assets/img/patients/patient4.jpg')}}"
                                                 alt="User Image"></a>
@@ -504,7 +504,7 @@
                             <tr>
                                 <td>
                                     <h2 class="table-avatar">
-                                        <a href="profile.html" class="avatar avatar-sm mr-2"><img
+                                        <a href="profile.html" class="mr-2 avatar avatar-sm"><img
                                                 class="avatar-img rounded-circle"
                                                 src="{{asset('doccure/admin/assets/img/doctors/doctor-thumb-05.jpg')}}"
                                                 alt="User Image"></a>
@@ -514,7 +514,7 @@
                                 <td>Orthopaedics</td>
                                 <td>
                                     <h2 class="table-avatar">
-                                        <a href="profile.html" class="avatar avatar-sm mr-2"><img
+                                        <a href="profile.html" class="mr-2 avatar avatar-sm"><img
                                                 class="avatar-img rounded-circle"
                                                 src="{{asset('doccure/admin/assets/img/patients/patient5.jpg')}}"
                                                 alt="User Image"></a>

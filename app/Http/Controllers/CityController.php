@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\City;
 use App\State;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
+
 
 class CityController extends Controller
 {
@@ -39,7 +39,8 @@ class CityController extends Controller
      */
     public function store(Request $request)
     {
-        $validator = Validator::make($request->all(), [
+        //
+        $request->validate([
             'name' => 'required|string|min:3|max:15|unique:cities,name',
             'status'=> 'required'
         ],[
@@ -53,9 +54,9 @@ class CityController extends Controller
         $issaved = $city->save();
         // $city = City::create($validator->validated());
 
-        if($city){
+        if($issaved){
             session()->flash('alert-type','alert-success');
-            session()->flash('messege','City add successfully');
+            session()->flash('messege','City created successfully');
             return redirect()->back();
         }else
         session()->flash('alert-type','alert-danger');
@@ -96,7 +97,7 @@ class CityController extends Controller
      */
     public function update(Request $request, $id)
     {
-         // $validator = Validator::make($request->all(),
+         //
         $request->request->add(['id'=>$id]);
          $request->validate([
             'id'=> 'required|integer|exists:cities|unique:cities,name,'.$id,
@@ -136,7 +137,7 @@ class CityController extends Controller
             ],200);
         }else{
             return response()->json([
-                'title'=>'Failde',
+                'title'=>'Faild',
                 'text'=>'Failde To Delete City!',
                 'icon'=>'error'
             ],400);

@@ -1,14 +1,14 @@
 <?php
 
 namespace App\Http\Controllers\API;
-use App\City;
+use App\State;
 
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\ControllerHelper;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
-class CityController extends Controller
+class StateController extends Controller
 {
     /**
      * Display a listing of the resource bw z NBVWGSDFGH0-Q.*
@@ -17,11 +17,11 @@ class CityController extends Controller
     public function index()
     {
         //
-        $cities = City::all();
+        $states = State::all();
         return response()->json([
             'status'=>true,
             'message'=>'Success',
-            'cities'=>$cities
+            'states'=>$states
             ]);
     }
 
@@ -35,18 +35,21 @@ class CityController extends Controller
     {
         //
         $roles = [
-            'name'=>'required|string|min:3|max:15'
+            'city_id'=>'required|integer|exists:cities,id',
+            'name'=>'required|string|min:3|max:15',
+            'status'=>'required',
         ];
         $validator = Validator($request->all(), $roles);
         if(!$validator->fails()){
-           $city = new City ();
-           $city->name = $request->get('name');
-           $isSaved = $city->save();
+           $state = new State ();
+           $state->city_id = $request->get('city_id');
+           $state->name = $request->get('name');
+           $state->status = $request->has('status') ?'Active' : 'InActive';
+           $isSaved = $state->save();
            if($isSaved){
-            return ControllerHelper::generateResponse(true,'city Created successfully');
-
+           return ControllerHelper::generateResponse(true,'state Created successfully');
            }else{
-            return ControllerHelper::generateResponse(false,'Faled to create city');
+            return ControllerHelper::generateResponse(false,'Faled to create state');
            }
         }else{
             return ControllerHelper::generateResponse(false,$validator->getMessageBag()->first());
@@ -63,16 +66,16 @@ class CityController extends Controller
     {
         //
         $request->request->add(['id' => $id]);
-        $validator = Validator::make($request->all(),['id' => 'required|exists:cities']);
+        $validator = Validator::make($request->all(),['id' => 'required|exists:states']);
         if(!$validator->fails()){
-        $city = City::find($id);
+        $state = State::find($id);
         return response()->json([
             'status' => true,
             'message' => 'success',
-            'data' => $city
+            'data' => $state
         ]);
         }else{
-            return ControllerHelper::generateResponse(false,$validator->getMessageBag()->first());
+            return  ControllerHelper::generateResponse(false,$validator->getMessageBag()->first());
         }
     }
 
@@ -89,26 +92,28 @@ class CityController extends Controller
 
         $request->request->add(['id'=>$id]);
         $roles = [
-            'id' => 'required|integer|exists:cities',
-            'name'=>'required|string|min:3|max:15'
+            'id' => 'required|integer|exists:states',
+            'city_id'=>'required|integer|exists:cities,id',
+            'name'=>'required|string|min:3|max:15',
+            'status'=>'required',
         ];
         $validator = Validator($request->all(), $roles);
         if(!$validator->fails()){
-           $city = City::find($id);
-           $city->name = $request->get('name');
-           $isUpdated = $city->save();
-           if($isUpdated){
-            return ControllerHelper::generateResponse(true,'city Created successfully');
+           $state = State::find($id);
+           $state->city_id = $request->get('city_id');
+           $state->name = $request->get('name');
+           $state->status = $request->has('status') ?'Active' : 'InActive';
+           $isUpdated = $state->save();
+            if($isUpdated){
+                return ControllerHelper::generateResponse(true,'state Created successfully');
 
-           }else{
-            return ControllerHelper::generateResponse(false,'Faled to create city');
-           }
-        }else{
-            return ControllerHelper::generateResponse(false,$validator->getMessageBag()->first());
-        }
-
-        }
-
+               }else{
+                return ControllerHelper::generateResponse(false,'Faled to create state');
+               }
+            }else{
+                return ControllerHelper::generateResponse(false,$validator->getMessageBag()->first());
+            }
+    }
 
     /**
      * Remove the specified resource from storage.
@@ -119,17 +124,17 @@ class CityController extends Controller
     public function destroy($id)
     {
         //
-        $city = City::findOrfail($id);
-        $isDeleted = $city->delete();
+        $state = State::findOrfail($id);
+        $isDeleted = $state->delete();
         if($isDeleted){
             return response()->json([
                 'status'=>true,
-                'message'=>'Deleted City Successfully'
+                'message'=>'Deleted State Successfully'
             ],200);
         }else{
             return response()->json([
                 'status'=>false,
-                'message'=>'Failed to deleted city!'
+                'message'=>'Failed to deleted state!'
             ],400);
         }
     }
