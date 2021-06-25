@@ -161,7 +161,7 @@
                                  class="avatar-img rounded-circle">
                         </div>
                         <div class="user-text">
-                            <h6>{{ Auth()->user()->first_name.''.Auth()->user()->last_name }}</h6>
+                            <h6>{{ Auth()->user()->first_name.' '.Auth()->user()->last_name }}</h6>
                             <p class="text-muted mb-0">Administrator</p>
                         </div>
                     </div>

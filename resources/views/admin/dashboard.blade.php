@@ -19,7 +19,7 @@
 											<i class="fe fe-users"></i>
 										</span>
                         <div class="dash-count">
-                            <h3>168</h3>
+                            <h3>{{ $doctor_count }}</h3>
                         </div>
                     </div>
                     <div class="dash-widget-info">
@@ -39,7 +39,7 @@
 											<i class="fe fe-credit-card"></i>
 										</span>
                         <div class="dash-count">
-                            <h3>487</h3>
+                            <h3>{{ $patient_count }}</h3>
                         </div>
                     </div>
                     <div class="dash-widget-info">
@@ -60,7 +60,7 @@
 											<i class="fe fe-money"></i>
 										</span>
                         <div class="dash-count">
-                            <h3>485</h3>
+                            <h3>{{ $app_count }}</h3>
                         </div>
                     </div>
                     <div class="dash-widget-info">
@@ -81,7 +81,7 @@
 											<i class="fe fe-folder"></i>
 										</span>
                         <div class="dash-count">
-                            <h3>$62523</h3>
+                            <h3>$6252</h3>
                         </div>
                     </div>
                     <div class="dash-widget-info">
@@ -135,117 +135,36 @@
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table class="table mb-0 table-hover table-center">
+                        <table class="table table-hover table-center mb-0">
                             <thead>
                             <tr>
+                                <th>Image</th>
                                 <th>Doctor Name</th>
-                                <th>Speciality</th>
-                                <th>Earned</th>
-                                <th>Reviews</th>
+                                <th>Email</th>
+                                <th>Mobiel</th>
+                                <th>Status</th>
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td>
-                                    <h2 class="table-avatar">
-                                        <a href="profile.html" class="mr-2 avatar avatar-sm"><img
-                                                class="avatar-img rounded-circle"
-                                                src="{{asset('doccure/admin/assets/img/doctors/doctor-thumb-01.jpg')}}"
-                                                alt="User Image"></a>
-                                        <a href="profile.html">Dr. Ruby Perrin</a>
-                                    </h2>
-                                </td>
-                                <td>Dental</td>
-                                <td>$3200.00</td>
-                                <td>
-                                    <i class="fe fe-star text-warning"></i>
-                                    <i class="fe fe-star text-warning"></i>
-                                    <i class="fe fe-star text-warning"></i>
-                                    <i class="fe fe-star text-warning"></i>
-                                    <i class="fe fe-star-o text-secondary"></i>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <h2 class="table-avatar">
-                                        <a href="profile.html" class="mr-2 avatar avatar-sm"><img
-                                                class="avatar-img rounded-circle"
-                                                src="{{asset('doccure/admin/assets/img/doctors/doctor-thumb-02.jpg')}}"
-                                                alt="User Image"></a>
-                                        <a href="profile.html">Dr. Darren Elder</a>
-                                    </h2>
-                                </td>
-                                <td>Dental</td>
-                                <td>$3100.00</td>
-                                <td>
-                                    <i class="fe fe-star text-warning"></i>
-                                    <i class="fe fe-star text-warning"></i>
-                                    <i class="fe fe-star text-warning"></i>
-                                    <i class="fe fe-star text-warning"></i>
-                                    <i class="fe fe-star-o text-secondary"></i>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <h2 class="table-avatar">
-                                        <a href="profile.html" class="mr-2 avatar avatar-sm"><img
-                                                class="avatar-img rounded-circle"
-                                                src="{{asset('doccure/admin/assets/img/doctors/doctor-thumb-03.jpg')}}"
-                                                alt="User Image"></a>
-                                        <a href="profile.html">Dr. Deborah Angel</a>
-                                    </h2>
-                                </td>
-                                <td>Cardiology</td>
-                                <td>$4000.00</td>
-                                <td>
-                                    <i class="fe fe-star text-warning"></i>
-                                    <i class="fe fe-star text-warning"></i>
-                                    <i class="fe fe-star text-warning"></i>
-                                    <i class="fe fe-star text-warning"></i>
-                                    <i class="fe fe-star-o text-secondary"></i>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <h2 class="table-avatar">
-                                        <a href="profile.html" class="mr-2 avatar avatar-sm"><img
-                                                class="avatar-img rounded-circle"
-                                                src="{{asset('doccure/admin/assets/img/doctors/doctor-thumb-04.jpg')}}"
-                                                alt="User Image"></a>
-                                        <a href="profile.html">Dr. Sofia Brient</a>
-                                    </h2>
-                                </td>
-                                <td>Urology</td>
-                                <td>$3200.00</td>
-                                <td>
-                                    <i class="fe fe-star text-warning"></i>
-                                    <i class="fe fe-star text-warning"></i>
-                                    <i class="fe fe-star text-warning"></i>
-                                    <i class="fe fe-star text-warning"></i>
-                                    <i class="fe fe-star-o text-secondary"></i>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <h2 class="table-avatar">
-                                        <a href="profile.html" class="mr-2 avatar avatar-sm"><img
-                                                class="avatar-img rounded-circle"
-                                                src="{{asset('doccure/admin/assets/img/doctors/doctor-thumb-05.jpg')}}"
-                                                alt="User Image"></a>
-                                        <a href="profile.html">Dr. Marvin Campbell</a>
-                                    </h2>
-                                </td>
-                                <td>Orthopaedics</td>
-                                <td>$3500.00</td>
-                                <td>
-                                    <i class="fe fe-star text-warning"></i>
-                                    <i class="fe fe-star text-warning"></i>
-                                    <i class="fe fe-star text-warning"></i>
-                                    <i class="fe fe-star text-warning"></i>
-                                    <i class="fe fe-star-o text-secondary"></i>
-                                </td>
-                            </tr>
+                            @foreach ($doctors as $doctor)
+                                <tr>
+                                    <td>
+                                        <div class="avatar avatar-lg">
+                                            <img class="avatar-img rounded-circle" alt="owner Image" src="{{url('images/owner/'.$doctor->image) }}">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <h2 class="table-avatar">
+                                            <a href="profile.html" class="avatar avatar-sm mr-2"></a>
+                                            <a href="profile.html">{{ $doctor->first_name }} {{ $doctor->last_name }}</a>
+                                        </h2>
+                                    </td>
+                                    <td>{{ $doctor->email }}</td>
+                                    <td>{{ $doctor->mobile}}</td>
+                                    <td>{{ $doctor->status}}</td>
+                                </tr>
                             </tbody>
+                            @endforeach
                         </table>
                     </div>
                 </div>
@@ -262,87 +181,36 @@
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table class="table mb-0 table-hover table-center">
+                        <table class="table table-hover table-center mb-0">
                             <thead>
                             <tr>
+                                <th>Image</th>
                                 <th>Patient Name</th>
-                                <th>Phone</th>
-                                <th>Last Visit</th>
-                                <th>Paid</th>
+                                <th>Email</th>
+                                <th>Mobiel</th>
+                                <th>Status</th>
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td>
-                                    <h2 class="table-avatar">
-                                        <a href="profile.html" class="mr-2 avatar avatar-sm"><img
-                                                class="avatar-img rounded-circle"
-                                                src="{{asset('doccure/admin/assets/img/patients/patient1.jpg')}}"
-                                                alt="User Image"></a>
-                                        <a href="profile.html">Charlene Reed </a>
-                                    </h2>
-                                </td>
-                                <td>8286329170</td>
-                                <td>20 Oct 2019</td>
-                                <td class="text-right">$100.00</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <h2 class="table-avatar">
-                                        <a href="profile.html" class="mr-2 avatar avatar-sm"><img
-                                                class="avatar-img rounded-circle"
-                                                src="{{asset('doccure/admin/assets/img/patients/patient2.jpg')}}"
-                                                alt="User Image"></a>
-                                        <a href="profile.html">Travis Trimble </a>
-                                    </h2>
-                                </td>
-                                <td>2077299974</td>
-                                <td>22 Oct 2019</td>
-                                <td class="text-right">$200.00</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <h2 class="table-avatar">
-                                        <a href="profile.html" class="mr-2 avatar avatar-sm"><img
-                                                class="avatar-img rounded-circle"
-                                                src="{{asset('doccure/admin/assets/img/patients/patient3.jpg')}}"
-                                                alt="User Image"></a>
-                                        <a href="profile.html">Carl Kelly</a>
-                                    </h2>
-                                </td>
-                                <td>2607247769</td>
-                                <td>21 Oct 2019</td>
-                                <td class="text-right">$250.00</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <h2 class="table-avatar">
-                                        <a href="profile.html" class="mr-2 avatar avatar-sm"><img
-                                                class="avatar-img rounded-circle"
-                                                src="{{asset('doccure/admin/assets/img/patients/patient4.jpg')}}"
-                                                alt="User Image"></a>
-                                        <a href="profile.html"> Michelle Fairfax</a>
-                                    </h2>
-                                </td>
-                                <td>5043686874</td>
-                                <td>21 Sep 2019</td>
-                                <td class="text-right">$150.00</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <h2 class="table-avatar">
-                                        <a href="profile.html" class="mr-2 avatar avatar-sm"><img
-                                                class="avatar-img rounded-circle"
-                                                src="{{asset('doccure/admin/assets/img/patients/patient5.jpg')}}"
-                                                alt="User Image"></a>
-                                        <a href="profile.html">Gina Moore</a>
-                                    </h2>
-                                </td>
-                                <td>9548207887</td>
-                                <td>18 Sep 2019</td>
-                                <td class="text-right">$350.00</td>
-                            </tr>
+                            @foreach ($patients as $patient)
+                                <tr>
+                                    <td>
+                                        <div class="avatar avatar-lg">
+                                            <img class="avatar-img rounded-circle" alt="owner Image" src="{{url('images/owner/'.$patient->image) }}">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <h2 class="table-avatar">
+                                            <a href="profile.html" class="avatar avatar-sm mr-2"></a>
+                                            <a href="profile.html">{{ $patient->first_name }} {{ $patient->last_name }}</a>
+                                        </h2>
+                                    </td>
+                                    <td>{{ $patient->email }}</td>
+                                    <td>{{ $patient->mobile}}</td>
+                                    <td>{{ $patient->status}}</td>
+                                </tr>
                             </tbody>
+                            @endforeach
                         </table>
                     </div>
                 </div>
@@ -361,178 +229,32 @@
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table class="table mb-0 table-hover table-center">
+                        <table class="table table-hover table-center mb-0">
                             <thead>
                             <tr>
+                                <th>ID</th>
+                                <th>Patient ID</th>
+                                <th>Doctor ID</th>
                                 <th>Doctor Name</th>
-                                <th>Speciality</th>
                                 <th>Patient Name</th>
-                                <th>Apointment Time</th>
-                                <th>Status</th>
-                                <th class="text-right">Amount</th>
+                                <th>Date</th>
+                                <th>Start Time</th>
+                                <th>End Time</th>
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td>
-                                    <h2 class="table-avatar">
-                                        <a href="profile.html" class="mr-2 avatar avatar-sm"><img
-                                                class="avatar-img rounded-circle"
-                                                src="{{asset('doccure/admin/assets/img/doctors/doctor-thumb-01.jpg')}}"
-                                                alt="User Image"></a>
-                                        <a href="profile.html">Dr. Ruby Perrin</a>
-                                    </h2>
-                                </td>
-                                <td>Dental</td>
-                                <td>
-                                    <h2 class="table-avatar">
-                                        <a href="profile.html" class="mr-2 avatar avatar-sm"><img
-                                                class="avatar-img rounded-circle"
-                                                src="{{asset('doccure/admin/assets/img/patients/patient1.jpg')}}"
-                                                alt="User Image"></a>
-                                        <a href="profile.html">Charlene Reed </a>
-                                    </h2>
-                                </td>
-                                <td>9 Nov 2019 <span class="text-primary d-block">11.00 AM - 11.15 AM</span>
-                                </td>
-                                <td>
-                                    <div class="status-toggle">
-                                        <input type="checkbox" id="status_1" class="check" checked>
-                                        <label for="status_1" class="checktoggle">checkbox</label>
-                                    </div>
-                                </td>
-                                <td class="text-right">
-                                    $200.00
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <h2 class="table-avatar">
-                                        <a href="profile.html" class="mr-2 avatar avatar-sm"><img
-                                                class="avatar-img rounded-circle"
-                                                src="{{asset('doccure/admin/assets/img/doctors/doctor-thumb-02.jpg')}}"
-                                                alt="User Image"></a>
-                                        <a href="profile.html">Dr. Darren Elder</a>
-                                    </h2>
-                                </td>
-                                <td>Dental</td>
-                                <td>
-                                    <h2 class="table-avatar">
-                                        <a href="profile.html" class="mr-2 avatar avatar-sm"><img
-                                                class="avatar-img rounded-circle"
-                                                src="{{asset('doccure/admin/assets/img/patients/patient2.jpg')}}"
-                                                alt="User Image"></a>
-                                        <a href="profile.html">Travis Trimble </a>
-                                    </h2>
-                                </td>
-
-                                <td>5 Nov 2019 <span class="text-primary d-block">11.00 AM - 11.35 AM</span>
-                                </td>
-                                <td>
-                                    <div class="status-toggle">
-                                        <input type="checkbox" id="status_2" class="check" checked>
-                                        <label for="status_2" class="checktoggle">checkbox</label>
-                                    </div>
-                                </td>
-                                <td class="text-right">
-                                    $300.00
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <h2 class="table-avatar">
-                                        <a href="profile.html" class="mr-2 avatar avatar-sm"><img
-                                                class="avatar-img rounded-circle"
-                                                src="{{asset('doccure/admin/assets/img/doctors/doctor-thumb-03.jpg')}}"
-                                                alt="User Image"></a>
-                                        <a href="profile.html">Dr. Deborah Angel</a>
-                                    </h2>
-                                </td>
-                                <td>Cardiology</td>
-                                <td>
-                                    <h2 class="table-avatar">
-                                        <a href="profile.html" class="mr-2 avatar avatar-sm"><img
-                                                class="avatar-img rounded-circle"
-                                                src="{{asset('doccure/admin/assets/img/patients/patient3.jpg')}}"
-                                                alt="User Image"></a>
-                                        <a href="profile.html">Carl Kelly</a>
-                                    </h2>
-                                </td>
-                                <td>11 Nov 2019 <span class="text-primary d-block">12.00 PM - 12.15 PM</span>
-                                </td>
-                                <td>
-                                    <div class="status-toggle">
-                                        <input type="checkbox" id="status_3" class="check" checked>
-                                        <label for="status_3" class="checktoggle">checkbox</label>
-                                    </div>
-                                </td>
-                                <td class="text-right">
-                                    $150.00
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <h2 class="table-avatar">
-                                        <a href="profile.html" class="mr-2 avatar avatar-sm"><img
-                                                class="avatar-img rounded-circle"
-                                                src="{{asset('doccure/admin/assets/img/doctors/doctor-thumb-04.jpg')}}"
-                                                alt="User Image"></a>
-                                        <a href="profile.html">Dr. Sofia Brient</a>
-                                    </h2>
-                                </td>
-                                <td>Urology</td>
-                                <td>
-                                    <h2 class="table-avatar">
-                                        <a href="profile.html" class="mr-2 avatar avatar-sm"><img
-                                                class="avatar-img rounded-circle"
-                                                src="{{asset('doccure/admin/assets/img/patients/patient4.jpg')}}"
-                                                alt="User Image"></a>
-                                        <a href="profile.html"> Michelle Fairfax</a>
-                                    </h2>
-                                </td>
-                                <td>7 Nov 2019<span class="text-primary d-block">1.00 PM - 1.20 PM</span></td>
-                                <td>
-                                    <div class="status-toggle">
-                                        <input type="checkbox" id="status_4" class="check" checked>
-                                        <label for="status_4" class="checktoggle">checkbox</label>
-                                    </div>
-                                </td>
-                                <td class="text-right">
-                                    $150.00
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <h2 class="table-avatar">
-                                        <a href="profile.html" class="mr-2 avatar avatar-sm"><img
-                                                class="avatar-img rounded-circle"
-                                                src="{{asset('doccure/admin/assets/img/doctors/doctor-thumb-05.jpg')}}"
-                                                alt="User Image"></a>
-                                        <a href="profile.html">Dr. Marvin Campbell</a>
-                                    </h2>
-                                </td>
-                                <td>Orthopaedics</td>
-                                <td>
-                                    <h2 class="table-avatar">
-                                        <a href="profile.html" class="mr-2 avatar avatar-sm"><img
-                                                class="avatar-img rounded-circle"
-                                                src="{{asset('doccure/admin/assets/img/patients/patient5.jpg')}}"
-                                                alt="User Image"></a>
-                                        <a href="profile.html">Gina Moore</a>
-                                    </h2>
-                                </td>
-
-                                <td>15 Nov 2019 <span class="text-primary d-block">1.00 PM - 1.15 PM</span></td>
-                                <td>
-                                    <div class="status-toggle">
-                                        <input type="checkbox" id="status_5" class="check" checked>
-                                        <label for="status_5" class="checktoggle">checkbox</label>
-                                    </div>
-                                </td>
-                                <td class="text-right">
-                                    $200.00
-                                </td>
-                            </tr>
+                            @foreach($appointments as $appointment)
+                                <tr>
+                                    <td>{{ $appointment->id}}</td>
+                                    <td>{{ $appointment->doctor_id}}</td>
+                                    <td>{{ $appointment->patient_id}}</td>
+                                    <td>{{ $appointment->doctor->name }}</td>
+                                    <td>{{ $appointment->patient->first_name }} {{ $reservation->user->last_name }}</td>
+                                    <td>{{ $appointment->date }}</td>
+                                    <td>{{ $appointment->start_time }}</td>
+                                    <td>{{ $appointment->end_time }}</td>
+                                </tr>
+                            @endforeach
                             </tbody>
                         </table>
                     </div>

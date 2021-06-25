@@ -14,23 +14,15 @@ class ApiAuthController extends Controller
 
         $validator = Validator::make($request->all(), User::roles());
         if(!$validator->fails()){
-            $user = User::create($validator->validated());
+            $user = User::create($request->all());
             if($user){
                 return $this->generateToken($user, 'REGISTERED_SUCCESSFULLY');
             }else{
                 //
-                return response()->json([
-                    'status'=>false,
-                    'message'=>'Faled to register'
-                ]);
+                return response()->json(['status'=>false, 'message'=>'Faled to register']);
             }
         }else{
-
-            return response()->json([
-                'status' => false,
-                'message' => $validator->getMessageBag()->first()
-
-            ]);
+            return response()->json(['status' => false, 'message' => $validator->getMessageBag()->first()]);
         }
     }
 
@@ -41,6 +33,7 @@ class ApiAuthController extends Controller
             $user = User::where('email', $request->get('email'))->first();
 
             if(Hash::check($request->get('password'), $user->password)){
+
                 // $this->revokePreviousToken($user->id);
                 // dd(123);
                 // return $this->generateToken($user, 'LOGGED_IN_SUCCESSFULLY');
@@ -56,19 +49,11 @@ class ApiAuthController extends Controller
                 }
 
             }else{
-                return response()->json([
-                    'status' => false,
-                    'message' => 'Error credentials'
-
-                ]);
+                return response()->json(['status' => false, 'message' => 'Error credentials']);
             }
 
         }else{
-            return response()->json([
-                'status' => false,
-                'message' => $validator->getMessageBag()->first()
-
-            ]);
+            return response()->json(['status' => false, 'message' => $validator->getMessageBag()->first()]);
         }
     }
 

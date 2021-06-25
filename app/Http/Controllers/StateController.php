@@ -15,7 +15,7 @@ class StateController extends Controller
     public function index()
     {
         //
-        $states = State::with('city')->get();
+        $states = State::with('city')->paginate(5);
         return view('admin.states.index',['states'=>$states]);
 
     }

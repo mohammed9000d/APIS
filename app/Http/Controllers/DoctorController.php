@@ -17,7 +17,7 @@ class DoctorController extends Controller
     public function index()
     {
         //
-        $doctors = Doctor::with('specialty')->get();
+        $doctors = Doctor::with('specialty')->paginate(5);
         return view('admin.doctors.index',['doctors'=>$doctors]);
     }
 

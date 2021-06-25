@@ -16,7 +16,7 @@ class CityController extends Controller
      */
     public function index()
     {
-        $cities = City::withcount('states')->get();
+        $cities = City::withcount('states')->paginate(5);
         return view ('admin.cities.index',['cities'=>$cities]);
 
     }

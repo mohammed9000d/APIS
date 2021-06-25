@@ -20,6 +20,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::namespace('API')->group(function () {
     Route::post('user/register','ApiAuthController@register');
     Route::post('user/login','ApiAuthController@login');
+});
+
+Route::namespace('API')->middleware('auth:user')->group(function () {
     Route::apiResource('states', 'StateController');
     Route::apiResource('patients', 'PatientController');
     Route::apiResource('specialties', 'SpecialtyController');
@@ -27,10 +30,6 @@ Route::namespace('API')->group(function () {
     Route::apiResource('appointments', 'AppointmentController');
     Route::apiResource('invoices', 'InvoiceController');
     Route::apiResource('admins', 'AdminController');
-});
-
-Route::namespace('API')->middleware('auth:user')->group(function () {
-    Route::apiResource('cities', 'CityController');
 
     Route::get('user/logout','ApiAuthController@logout');
 });

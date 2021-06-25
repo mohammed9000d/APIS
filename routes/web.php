@@ -80,7 +80,7 @@ Route::prefix('cms/patient')->group(function () {
 // });
 // });
 Route::prefix('cms/admin')->middleware('auth:admin')->group(function () {
-    Route::view('/', 'admin.dashboard')->name('admin.dashboard');
+    Route::get('/','GeneralController@getCounts')->name('admin.dashboard');
 });
 Route::prefix('cms/admin')->middleware('auth:admin')->group(function () {
     Route::get('/logout','Auth\AdminAuthController@logout')->name('admin.logout');

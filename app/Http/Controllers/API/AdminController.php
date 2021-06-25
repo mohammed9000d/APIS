@@ -23,7 +23,7 @@ class AdminController extends Controller
             'status'=>true,
             'message'=>'Success',
             'admins'=>$admins
-            ]);
+        ]);
     }
 
     /**
@@ -71,9 +71,9 @@ class AdminController extends Controller
             }else{
                 return ControllerHelper::generateResponse(false,'Faled to create admin');
             }
-            }else{
-                return ControllerHelper::generateResponse(false,$validator->getMessageBag()->first());
-            }
+        }else{
+            return ControllerHelper::generateResponse(false,$validator->getMessageBag()->first());
+        }
     }
 
     /**
